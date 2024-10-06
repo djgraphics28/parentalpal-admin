@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/parentpal-admin.test"
+            "value": "https:\/\/parentpal.online"
         }
     ],
     "info": {
         "name": "ParentPal",
-        "_postman_id": "0e4fe382-eb8d-45bc-a3c1-701033351497",
+        "_postman_id": "8390f18f-85ff-49cb-bb69-8ffd46580a84",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"xhsgqkxfaeluprwkjlmgvvb\",\"email\":\"ofelia29@example.org\",\"password\":\"]>n~Bk779k6pv@e,6&c\"}"
+                            "raw": "{\"name\":\"ofwrvuldis\",\"email\":\"mcole@example.com\",\"password\":\")2\\\"F-e6#\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"myrtle42@example.org\",\"password\":\"-p0*G>{\\\"=\"}"
+                            "raw": "{\"email\":\"bennett26@example.com\",\"password\":\":$phd3`Q\"}"
                         },
                         "description": "",
                         "auth": {
@@ -103,7 +103,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"armani.schaden@example.net\"}"
+                            "raw": "{\"email\":\"orion.quigley@example.net\"}"
                         },
                         "description": "",
                         "auth": {
@@ -162,7 +162,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"wraynor@example.net\",\"token\":\"enim\",\"password\":\"D'RbaKUmC8A:;q5<!L\\\\h\"}"
+                            "raw": "{\"email\":\"kristin67@example.org\",\"token\":\"aliquam\",\"password\":\"\\\/~*dvL=z`)3Sw=('X|S\"}"
                         },
                         "description": "",
                         "auth": {
@@ -262,7 +262,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "laboriosam",
+                                    "value": "natus",
                                     "description": "The ID of the child."
                                 }
                             ]
@@ -321,7 +321,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "omnis",
+                                    "value": "veniam",
                                     "description": "The ID of the child."
                                 }
                             ]
@@ -360,7 +360,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "vitae",
+                                    "value": "dicta",
                                     "description": "The ID of the child."
                                 }
                             ]
@@ -447,7 +447,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "numquam",
+                                    "value": "iste",
                                     "description": "The ID of the parent."
                                 }
                             ]
@@ -506,7 +506,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ea",
+                                    "value": "quidem",
                                     "description": "The ID of the parent."
                                 }
                             ]
@@ -524,7 +524,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"John Doe\",\"email\":\"john@example.com\",\"password\":\"e$mdlA\\\"-xn^@UbLh<d\",\"id\":1}"
+                            "raw": "{\"name\":\"John Doe\",\"email\":\"john@example.com\",\"password\":\"\\\/xBmDM!p(\",\"id\":1}"
                         },
                         "description": "",
                         "auth": {
@@ -545,7 +545,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "tenetur",
+                                    "value": "sint",
                                     "description": "The ID of the parent."
                                 }
                             ]
@@ -642,7 +642,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"month_range\":\"voluptatem\",\"month_start\":\"January\",\"month_end\":\"December\"}"
+                            "raw": "{\"month_range\":\"dolor\",\"month_start\":\"January\",\"month_end\":\"December\"}"
                         },
                         "description": "",
                         "auth": {
@@ -663,7 +663,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "fuga",
+                                    "value": "dolores",
                                     "description": "The ID of the month range."
                                 }
                             ]
@@ -722,7 +722,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptas",
+                                    "value": "deleniti",
                                     "description": "The ID of the month range."
                                 }
                             ]
@@ -740,7 +740,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"month_range\":\"est\",\"id\":1,\"month_start\":\"January\",\"month_end\":\"December\"}"
+                            "raw": "{\"month_range\":\"at\",\"id\":1,\"month_start\":\"January\",\"month_end\":\"December\"}"
                         },
                         "description": "",
                         "auth": {
@@ -761,7 +761,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "rerum",
+                                    "value": "assumenda",
                                     "description": "The ID of the month range."
                                 }
                             ]
@@ -879,7 +879,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "soluta",
+                                    "value": "recusandae",
                                     "description": "The ID of the milestone."
                                 }
                             ]
@@ -938,7 +938,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "id",
+                                    "value": "in",
                                     "description": "The ID of the milestone."
                                 }
                             ]
@@ -977,7 +977,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quo",
+                                    "value": "tempora",
                                     "description": "The ID of the milestone."
                                 }
                             ]
@@ -1016,7 +1016,7 @@
                                 {
                                     "id": "child_id",
                                     "key": "child_id",
-                                    "value": "et",
+                                    "value": "ad",
                                     "description": "The ID of the child."
                                 }
                             ]
@@ -1075,7 +1075,7 @@
                                 {
                                     "id": "child_id",
                                     "key": "child_id",
-                                    "value": "eum",
+                                    "value": "natus",
                                     "description": "The ID of the child."
                                 }
                             ]
@@ -1114,13 +1114,13 @@
                                 {
                                     "id": "child_id",
                                     "key": "child_id",
-                                    "value": "ad",
+                                    "value": "dolores",
                                     "description": "The ID of the child."
                                 },
                                 {
                                     "id": "routine_id",
                                     "key": "routine_id",
-                                    "value": "qui",
+                                    "value": "eius",
                                     "description": "The ID of the routine."
                                 }
                             ]
@@ -1179,13 +1179,13 @@
                                 {
                                     "id": "child_id",
                                     "key": "child_id",
-                                    "value": "aut",
+                                    "value": "adipisci",
                                     "description": "The ID of the child."
                                 },
                                 {
                                     "id": "routine_id",
                                     "key": "routine_id",
-                                    "value": "voluptates",
+                                    "value": "hic",
                                     "description": "The ID of the routine."
                                 }
                             ]
@@ -1224,13 +1224,13 @@
                                 {
                                     "id": "child_id",
                                     "key": "child_id",
-                                    "value": "voluptatem",
+                                    "value": "temporibus",
                                     "description": "The ID of the child."
                                 },
                                 {
                                     "id": "routine_id",
                                     "key": "routine_id",
-                                    "value": "id",
+                                    "value": "sed",
                                     "description": "The ID of the routine."
                                 }
                             ]

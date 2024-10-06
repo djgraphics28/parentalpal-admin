@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 servers:
   -
-    url: 'http://parentpal-admin.test'
+    url: 'https://parentpal.online'
 paths:
   /api/register:
     post:
@@ -26,15 +26,15 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: xhsgqkxfaeluprwkjlmgvvb
+                  example: ofwrvuldis
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: ofelia29@example.org
+                  example: mcole@example.com
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: ']>n~Bk779k6pv@e,6&c'
+                  example: ')2"F-e6#'
               required:
                 - name
                 - email
@@ -59,11 +59,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: myrtle42@example.org
+                  example: bennett26@example.com
                 password:
                   type: string
                   description: ''
-                  example: '-p0*G>{"='
+                  example: ':$phd3`Q'
               required:
                 - email
                 - password
@@ -87,7 +87,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: armani.schaden@example.net
+                  example: orion.quigley@example.net
               required:
                 - email
       security: []
@@ -120,15 +120,15 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: wraynor@example.net
+                  example: kristin67@example.org
                 token:
                   type: string
                   description: ''
-                  example: enim
+                  example: aliquam
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: 'D''RbaKUmC8A:;q5<!L\h'
+                  example: "/~*dvL=z`)3Sw=('X|S"
               required:
                 - email
                 - token
@@ -284,7 +284,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the child.'
-        example: laboriosam
+        example: natus
         required: true
         schema:
           type: string
@@ -371,7 +371,7 @@ paths:
                 password:
                   type: string
                   description: "optional The parent's password. Must be at least 8 characters. Confirm password with 'password_confirmation'."
-                  example: 'e$mdlA"-xn^@UbLh<d'
+                  example: /xBmDM!p(
                 id:
                   type: integer
                   description: 'The ID of the user.'
@@ -406,7 +406,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the parent.'
-        example: numquam
+        example: iste
         required: true
         schema:
           type: string
@@ -450,7 +450,7 @@ paths:
                 month_range:
                   type: string
                   description: ''
-                  example: voluptatem
+                  example: dolor
                 month_start:
                   type: string
                   description: 'The start month of the range.'
@@ -517,7 +517,7 @@ paths:
                 month_range:
                   type: string
                   description: ''
-                  example: est
+                  example: at
                 id:
                   type: integer
                   description: 'The ID of the month range.'
@@ -563,7 +563,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the month range.'
-        example: fuga
+        example: dolores
         required: true
         schema:
           type: string
@@ -700,7 +700,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the milestone.'
-        example: soluta
+        example: recusandae
         required: true
         schema:
           type: string
@@ -781,7 +781,7 @@ paths:
         in: path
         name: child_id
         description: 'The ID of the child.'
-        example: et
+        example: ad
         required: true
         schema:
           type: string
@@ -899,7 +899,7 @@ paths:
         in: path
         name: child_id
         description: 'The ID of the child.'
-        example: ad
+        example: dolores
         required: true
         schema:
           type: string
@@ -907,7 +907,7 @@ paths:
         in: path
         name: routine_id
         description: 'The ID of the routine.'
-        example: qui
+        example: eius
         required: true
         schema:
           type: string

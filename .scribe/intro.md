@@ -3,7 +3,7 @@
 
 
 <aside>
-    <strong>Base URL</strong>: <code>http://parentpal-admin.test</code>
+    <strong>Base URL</strong>: <code>https://parentpal.online</code>
 </aside>
 
 This documentation aims to provide all the information you need to work with our API.

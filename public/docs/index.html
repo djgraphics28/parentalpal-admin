@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://parentpal-admin.test";
+        var tryItOutBaseUrl = "https://parentpal.online";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -178,7 +178,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://parentpal-admin.test</code>
+    <strong>Base URL</strong>: <code>https://parentpal.online</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -204,20 +204,20 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://parentpal-admin.test/api/register" \
+    "https://parentpal.online/api/register" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"xhsgqkxfaeluprwkjlmgvvb\",
-    \"email\": \"ofelia29@example.org\",
-    \"password\": \"]&gt;n~Bk779k6pv@e,6&amp;c\"
+    \"name\": \"ofwrvuldis\",
+    \"email\": \"mcole@example.com\",
+    \"password\": \")2\\\"F-e6#\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/register"
+    "https://parentpal.online/api/register"
 );
 
 const headers = {
@@ -226,9 +226,9 @@ const headers = {
 };
 
 let body = {
-    "name": "xhsgqkxfaeluprwkjlmgvvb",
-    "email": "ofelia29@example.org",
-    "password": "]&gt;n~Bk779k6pv@e,6&amp;c"
+    "name": "ofwrvuldis",
+    "email": "mcole@example.com",
+    "password": ")2\"F-e6#"
 };
 
 fetch(url, {
@@ -317,10 +317,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-register"
-               value="xhsgqkxfaeluprwkjlmgvvb"
+               value="ofwrvuldis"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>xhsgqkxfaeluprwkjlmgvvb</code></p>
+<p>Must not be greater than 255 characters. Example: <code>ofwrvuldis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -328,10 +328,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-register"
-               value="ofelia29@example.org"
+               value="mcole@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>ofelia29@example.org</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>mcole@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -339,10 +339,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-register"
-               value="]>n~Bk779k6pv@e,6&c"
+               value=")2"F-e6#"
                data-component="body">
     <br>
-<p>Must be at least 8 characters. Example: <code>]&gt;n~Bk779k6pv@e,6&amp;c</code></p>
+<p>Must be at least 8 characters. Example: <code>)2"F-e6#</code></p>
         </div>
         </form>
 
@@ -359,19 +359,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://parentpal-admin.test/api/login" \
+    "https://parentpal.online/api/login" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"myrtle42@example.org\",
-    \"password\": \"-p0*G&gt;{\\\"=\"
+    \"email\": \"bennett26@example.com\",
+    \"password\": \":$phd3`Q\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/login"
+    "https://parentpal.online/api/login"
 );
 
 const headers = {
@@ -380,8 +380,8 @@ const headers = {
 };
 
 let body = {
-    "email": "myrtle42@example.org",
-    "password": "-p0*G&gt;{\"="
+    "email": "bennett26@example.com",
+    "password": ":$phd3`Q"
 };
 
 fetch(url, {
@@ -470,10 +470,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-login"
-               value="myrtle42@example.org"
+               value="bennett26@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>myrtle42@example.org</code></p>
+<p>Must be a valid email address. Example: <code>bennett26@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -481,10 +481,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value="-p0*G>{"="
+               value=":$phd3`Q"
                data-component="body">
     <br>
-<p>Example: <code>-p0*G&gt;{"=</code></p>
+<p>Example: <code>:$phd3</code>Q`</p>
         </div>
         </form>
 
@@ -501,18 +501,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://parentpal-admin.test/api/forgot-password" \
+    "https://parentpal.online/api/forgot-password" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"armani.schaden@example.net\"
+    \"email\": \"orion.quigley@example.net\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/forgot-password"
+    "https://parentpal.online/api/forgot-password"
 );
 
 const headers = {
@@ -521,7 +521,7 @@ const headers = {
 };
 
 let body = {
-    "email": "armani.schaden@example.net"
+    "email": "orion.quigley@example.net"
 };
 
 fetch(url, {
@@ -610,10 +610,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-forgot-password"
-               value="armani.schaden@example.net"
+               value="orion.quigley@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>armani.schaden@example.net</code></p>
+<p>Must be a valid email address. Example: <code>orion.quigley@example.net</code></p>
         </div>
         </form>
 
@@ -630,14 +630,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://parentpal-admin.test/api/logout" \
+    "https://parentpal.online/api/logout" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/logout"
+    "https://parentpal.online/api/logout"
 );
 
 const headers = {
@@ -738,20 +738,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://parentpal-admin.test/api/reset-password" \
+    "https://parentpal.online/api/reset-password" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"wraynor@example.net\",
-    \"token\": \"enim\",
-    \"password\": \"D\'RbaKUmC8A:;q5&lt;!L\\\\h\"
+    \"email\": \"kristin67@example.org\",
+    \"token\": \"aliquam\",
+    \"password\": \"\\/~*dvL=z`)3Sw=(\'X|S\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/reset-password"
+    "https://parentpal.online/api/reset-password"
 );
 
 const headers = {
@@ -760,9 +760,9 @@ const headers = {
 };
 
 let body = {
-    "email": "wraynor@example.net",
-    "token": "enim",
-    "password": "D'RbaKUmC8A:;q5&lt;!L\\h"
+    "email": "kristin67@example.org",
+    "token": "aliquam",
+    "password": "\/~*dvL=z`)3Sw=('X|S"
 };
 
 fetch(url, {
@@ -851,10 +851,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-reset-password"
-               value="wraynor@example.net"
+               value="kristin67@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>wraynor@example.net</code></p>
+<p>Must be a valid email address. Example: <code>kristin67@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>token</code></b>&nbsp;&nbsp;
@@ -862,10 +862,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token"                data-endpoint="POSTapi-reset-password"
-               value="enim"
+               value="aliquam"
                data-component="body">
     <br>
-<p>Example: <code>enim</code></p>
+<p>Example: <code>aliquam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -873,10 +873,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-reset-password"
-               value="D'RbaKUmC8A:;q5<!L\h"
+               value="/~*dvL=z`)3Sw=('X|S"
                data-component="body">
     <br>
-<p>Must be at least 8 characters. Example: <code>D'RbaKUmC8A:;q5&lt;!L\h</code></p>
+<p>Must be at least 8 characters. Example: <code>/~*dvL=z</code>)3Sw=('X|S`</p>
         </div>
         </form>
 
@@ -893,14 +893,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://parentpal-admin.test/api/children" \
+    --get "https://parentpal.online/api/children" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/children"
+    "https://parentpal.online/api/children"
 );
 
 const headers = {
@@ -1017,7 +1017,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://parentpal-admin.test/api/children" \
+    "https://parentpal.online/api/children" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -1030,7 +1030,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/children"
+    "https://parentpal.online/api/children"
 );
 
 const headers = {
@@ -1172,7 +1172,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://parentpal-admin.test/api/children/laboriosam" \
+    --get "https://parentpal.online/api/children/natus" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -1183,7 +1183,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/children/laboriosam"
+    "https://parentpal.online/api/children/natus"
 );
 
 const headers = {
@@ -1297,10 +1297,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-children--id-"
-               value="laboriosam"
+               value="natus"
                data-component="url">
     <br>
-<p>The ID of the child. Example: <code>laboriosam</code></p>
+<p>The ID of the child. Example: <code>natus</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -1329,7 +1329,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://parentpal-admin.test/api/children/omnis" \
+    "https://parentpal.online/api/children/veniam" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -1343,7 +1343,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/children/omnis"
+    "https://parentpal.online/api/children/veniam"
 );
 
 const headers = {
@@ -1448,10 +1448,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-children--id-"
-               value="omnis"
+               value="veniam"
                data-component="url">
     <br>
-<p>The ID of the child. Example: <code>omnis</code></p>
+<p>The ID of the child. Example: <code>veniam</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -1513,7 +1513,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://parentpal-admin.test/api/children/vitae" \
+    "https://parentpal.online/api/children/dicta" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -1524,7 +1524,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/children/vitae"
+    "https://parentpal.online/api/children/dicta"
 );
 
 const headers = {
@@ -1622,10 +1622,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-children--id-"
-               value="vitae"
+               value="dicta"
                data-component="url">
     <br>
-<p>The ID of the child. Example: <code>vitae</code></p>
+<p>The ID of the child. Example: <code>dicta</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -1654,14 +1654,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://parentpal-admin.test/api/parents" \
+    --get "https://parentpal.online/api/parents" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/parents"
+    "https://parentpal.online/api/parents"
 );
 
 const headers = {
@@ -1778,7 +1778,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://parentpal-admin.test/api/parents/numquam" \
+    --get "https://parentpal.online/api/parents/iste" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -1789,7 +1789,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/parents/numquam"
+    "https://parentpal.online/api/parents/iste"
 );
 
 const headers = {
@@ -1903,10 +1903,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-parents--id-"
-               value="numquam"
+               value="iste"
                data-component="url">
     <br>
-<p>The ID of the parent. Example: <code>numquam</code></p>
+<p>The ID of the parent. Example: <code>iste</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -1935,13 +1935,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://parentpal-admin.test/api/parents/ea" \
+    "https://parentpal.online/api/parents/quidem" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
     \"name\": \"John Doe\",
     \"email\": \"john@example.com\",
-    \"password\": \"e$mdlA\\\"-xn^@UbLh&lt;d\",
+    \"password\": \"\\/xBmDM!p(\",
     \"id\": 1
 }"
 </code></pre></div>
@@ -1949,7 +1949,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/parents/ea"
+    "https://parentpal.online/api/parents/quidem"
 );
 
 const headers = {
@@ -1960,7 +1960,7 @@ const headers = {
 let body = {
     "name": "John Doe",
     "email": "john@example.com",
-    "password": "e$mdlA\"-xn^@UbLh&lt;d",
+    "password": "\/xBmDM!p(",
     "id": 1
 };
 
@@ -2054,10 +2054,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-parents--id-"
-               value="ea"
+               value="quidem"
                data-component="url">
     <br>
-<p>The ID of the parent. Example: <code>ea</code></p>
+<p>The ID of the parent. Example: <code>quidem</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -2088,10 +2088,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="PUTapi-parents--id-"
-               value="e$mdlA"-xn^@UbLh<d"
+               value="/xBmDM!p("
                data-component="body">
     <br>
-<p>optional The parent's password. Must be at least 8 characters. Confirm password with 'password_confirmation'. Example: <code>e$mdlA"-xn^@UbLh&lt;d</code></p>
+<p>optional The parent's password. Must be at least 8 characters. Confirm password with 'password_confirmation'. Example: <code>/xBmDM!p(</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -2119,7 +2119,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://parentpal-admin.test/api/parents/tenetur" \
+    "https://parentpal.online/api/parents/sint" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -2130,7 +2130,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/parents/tenetur"
+    "https://parentpal.online/api/parents/sint"
 );
 
 const headers = {
@@ -2228,10 +2228,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-parents--id-"
-               value="tenetur"
+               value="sint"
                data-component="url">
     <br>
-<p>The ID of the parent. Example: <code>tenetur</code></p>
+<p>The ID of the parent. Example: <code>sint</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -2260,14 +2260,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://parentpal-admin.test/api/month-ranges" \
+    --get "https://parentpal.online/api/month-ranges" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/month-ranges"
+    "https://parentpal.online/api/month-ranges"
 );
 
 const headers = {
@@ -2384,11 +2384,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://parentpal-admin.test/api/month-ranges" \
+    "https://parentpal.online/api/month-ranges" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"month_range\": \"voluptatem\",
+    \"month_range\": \"dolor\",
     \"month_start\": \"January\",
     \"month_end\": \"December\"
 }"
@@ -2397,7 +2397,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/month-ranges"
+    "https://parentpal.online/api/month-ranges"
 );
 
 const headers = {
@@ -2406,7 +2406,7 @@ const headers = {
 };
 
 let body = {
-    "month_range": "voluptatem",
+    "month_range": "dolor",
     "month_start": "January",
     "month_end": "December"
 };
@@ -2497,10 +2497,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="month_range"                data-endpoint="POSTapi-month-ranges"
-               value="voluptatem"
+               value="dolor"
                data-component="body">
     <br>
-<p>Example: <code>voluptatem</code></p>
+<p>Example: <code>dolor</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>month_start</code></b>&nbsp;&nbsp;
@@ -2539,7 +2539,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://parentpal-admin.test/api/month-ranges/fuga" \
+    --get "https://parentpal.online/api/month-ranges/dolores" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -2550,7 +2550,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/month-ranges/fuga"
+    "https://parentpal.online/api/month-ranges/dolores"
 );
 
 const headers = {
@@ -2664,10 +2664,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-month-ranges--id-"
-               value="fuga"
+               value="dolores"
                data-component="url">
     <br>
-<p>The ID of the month range. Example: <code>fuga</code></p>
+<p>The ID of the month range. Example: <code>dolores</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -2696,11 +2696,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://parentpal-admin.test/api/month-ranges/voluptas" \
+    "https://parentpal.online/api/month-ranges/deleniti" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"month_range\": \"est\",
+    \"month_range\": \"at\",
     \"id\": 1,
     \"month_start\": \"January\",
     \"month_end\": \"December\"
@@ -2710,7 +2710,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/month-ranges/voluptas"
+    "https://parentpal.online/api/month-ranges/deleniti"
 );
 
 const headers = {
@@ -2719,7 +2719,7 @@ const headers = {
 };
 
 let body = {
-    "month_range": "est",
+    "month_range": "at",
     "id": 1,
     "month_start": "January",
     "month_end": "December"
@@ -2815,10 +2815,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-month-ranges--id-"
-               value="voluptas"
+               value="deleniti"
                data-component="url">
     <br>
-<p>The ID of the month range. Example: <code>voluptas</code></p>
+<p>The ID of the month range. Example: <code>deleniti</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -2827,10 +2827,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="month_range"                data-endpoint="PUTapi-month-ranges--id-"
-               value="est"
+               value="at"
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>at</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -2880,7 +2880,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://parentpal-admin.test/api/month-ranges/rerum" \
+    "https://parentpal.online/api/month-ranges/assumenda" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -2891,7 +2891,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/month-ranges/rerum"
+    "https://parentpal.online/api/month-ranges/assumenda"
 );
 
 const headers = {
@@ -2989,10 +2989,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-month-ranges--id-"
-               value="rerum"
+               value="assumenda"
                data-component="url">
     <br>
-<p>The ID of the month range. Example: <code>rerum</code></p>
+<p>The ID of the month range. Example: <code>assumenda</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -3021,14 +3021,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://parentpal-admin.test/api/milestones" \
+    --get "https://parentpal.online/api/milestones" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/milestones"
+    "https://parentpal.online/api/milestones"
 );
 
 const headers = {
@@ -3145,7 +3145,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://parentpal-admin.test/api/milestones" \
+    "https://parentpal.online/api/milestones" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -3156,7 +3156,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/milestones"
+    "https://parentpal.online/api/milestones"
 );
 
 const headers = {
@@ -3274,7 +3274,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://parentpal-admin.test/api/milestones/soluta" \
+    --get "https://parentpal.online/api/milestones/recusandae" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -3285,7 +3285,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/milestones/soluta"
+    "https://parentpal.online/api/milestones/recusandae"
 );
 
 const headers = {
@@ -3399,10 +3399,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-milestones--id-"
-               value="soluta"
+               value="recusandae"
                data-component="url">
     <br>
-<p>The ID of the milestone. Example: <code>soluta</code></p>
+<p>The ID of the milestone. Example: <code>recusandae</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -3431,7 +3431,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://parentpal-admin.test/api/milestones/id" \
+    "https://parentpal.online/api/milestones/in" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -3443,7 +3443,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/milestones/id"
+    "https://parentpal.online/api/milestones/in"
 );
 
 const headers = {
@@ -3546,10 +3546,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-milestones--id-"
-               value="id"
+               value="in"
                data-component="url">
     <br>
-<p>The ID of the milestone. Example: <code>id</code></p>
+<p>The ID of the milestone. Example: <code>in</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -3589,7 +3589,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://parentpal-admin.test/api/milestones/quo" \
+    "https://parentpal.online/api/milestones/tempora" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -3600,7 +3600,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/milestones/quo"
+    "https://parentpal.online/api/milestones/tempora"
 );
 
 const headers = {
@@ -3698,10 +3698,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-milestones--id-"
-               value="quo"
+               value="tempora"
                data-component="url">
     <br>
-<p>The ID of the milestone. Example: <code>quo</code></p>
+<p>The ID of the milestone. Example: <code>tempora</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -3730,7 +3730,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://parentpal-admin.test/api/children/et/daily-routines" \
+    --get "https://parentpal.online/api/children/ad/daily-routines" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -3741,7 +3741,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/children/et/daily-routines"
+    "https://parentpal.online/api/children/ad/daily-routines"
 );
 
 const headers = {
@@ -3855,10 +3855,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="child_id"                data-endpoint="GETapi-children--child_id--daily-routines"
-               value="et"
+               value="ad"
                data-component="url">
     <br>
-<p>The ID of the child. Example: <code>et</code></p>
+<p>The ID of the child. Example: <code>ad</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -3887,7 +3887,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://parentpal-admin.test/api/children/eum/daily-routines" \
+    "https://parentpal.online/api/children/natus/daily-routines" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -3901,7 +3901,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/children/eum/daily-routines"
+    "https://parentpal.online/api/children/natus/daily-routines"
 );
 
 const headers = {
@@ -4002,10 +4002,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="child_id"                data-endpoint="POSTapi-children--child_id--daily-routines"
-               value="eum"
+               value="natus"
                data-component="url">
     <br>
-<p>The ID of the child. Example: <code>eum</code></p>
+<p>The ID of the child. Example: <code>natus</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -4067,7 +4067,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://parentpal-admin.test/api/children/ad/daily-routines/qui" \
+    --get "https://parentpal.online/api/children/dolores/daily-routines/eius" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -4079,7 +4079,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/children/ad/daily-routines/qui"
+    "https://parentpal.online/api/children/dolores/daily-routines/eius"
 );
 
 const headers = {
@@ -4194,10 +4194,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="child_id"                data-endpoint="GETapi-children--child_id--daily-routines--routine_id-"
-               value="ad"
+               value="dolores"
                data-component="url">
     <br>
-<p>The ID of the child. Example: <code>ad</code></p>
+<p>The ID of the child. Example: <code>dolores</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>routine_id</code></b>&nbsp;&nbsp;
@@ -4205,10 +4205,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="routine_id"                data-endpoint="GETapi-children--child_id--daily-routines--routine_id-"
-               value="qui"
+               value="eius"
                data-component="url">
     <br>
-<p>The ID of the routine. Example: <code>qui</code></p>
+<p>The ID of the routine. Example: <code>eius</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -4248,7 +4248,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://parentpal-admin.test/api/children/aut/daily-routines/voluptates" \
+    "https://parentpal.online/api/children/adipisci/daily-routines/hic" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -4263,7 +4263,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/children/aut/daily-routines/voluptates"
+    "https://parentpal.online/api/children/adipisci/daily-routines/hic"
 );
 
 const headers = {
@@ -4365,10 +4365,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="child_id"                data-endpoint="PUTapi-children--child_id--daily-routines--routine_id-"
-               value="aut"
+               value="adipisci"
                data-component="url">
     <br>
-<p>The ID of the child. Example: <code>aut</code></p>
+<p>The ID of the child. Example: <code>adipisci</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>routine_id</code></b>&nbsp;&nbsp;
@@ -4376,10 +4376,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="routine_id"                data-endpoint="PUTapi-children--child_id--daily-routines--routine_id-"
-               value="voluptates"
+               value="hic"
                data-component="url">
     <br>
-<p>The ID of the routine. Example: <code>voluptates</code></p>
+<p>The ID of the routine. Example: <code>hic</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -4452,7 +4452,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://parentpal-admin.test/api/children/voluptatem/daily-routines/id" \
+    "https://parentpal.online/api/children/temporibus/daily-routines/sed" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -4464,7 +4464,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://parentpal-admin.test/api/children/voluptatem/daily-routines/id"
+    "https://parentpal.online/api/children/temporibus/daily-routines/sed"
 );
 
 const headers = {
@@ -4563,10 +4563,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="child_id"                data-endpoint="DELETEapi-children--child_id--daily-routines--routine_id-"
-               value="voluptatem"
+               value="temporibus"
                data-component="url">
     <br>
-<p>The ID of the child. Example: <code>voluptatem</code></p>
+<p>The ID of the child. Example: <code>temporibus</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>routine_id</code></b>&nbsp;&nbsp;
@@ -4574,10 +4574,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="routine_id"                data-endpoint="DELETEapi-children--child_id--daily-routines--routine_id-"
-               value="id"
+               value="sed"
                data-component="url">
     <br>
-<p>The ID of the routine. Example: <code>id</code></p>
+<p>The ID of the routine. Example: <code>sed</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
