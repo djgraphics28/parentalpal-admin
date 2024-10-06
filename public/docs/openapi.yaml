@@ -1,0 +1,917 @@
+openapi: 3.0.3
+info:
+  title: ParentPal
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://parentpal-admin.test'
+paths:
+  /api/register:
+    post:
+      summary: 'Register a new user.'
+      operationId: registerANewUser
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: xhsgqkxfaeluprwkjlmgvvb
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: ofelia29@example.org
+                password:
+                  type: string
+                  description: 'Must be at least 8 characters.'
+                  example: ']>n~Bk779k6pv@e,6&c'
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/login:
+    post:
+      summary: 'Login user and return token.'
+      operationId: loginUserAndReturnToken
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: myrtle42@example.org
+                password:
+                  type: string
+                  description: ''
+                  example: '-p0*G>{"='
+              required:
+                - email
+                - password
+      security: []
+  /api/forgot-password:
+    post:
+      summary: 'Handle forgot password request.'
+      operationId: handleForgotPasswordRequest
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: armani.schaden@example.net
+              required:
+                - email
+      security: []
+  /api/logout:
+    post:
+      summary: 'Logout the user and revoke tokens.'
+      operationId: logoutTheUserAndRevokeTokens
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/reset-password:
+    post:
+      summary: 'Reset password handler.'
+      operationId: resetPasswordHandler
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: wraynor@example.net
+                token:
+                  type: string
+                  description: ''
+                  example: enim
+                password:
+                  type: string
+                  description: 'Must be at least 8 characters.'
+                  example: 'D''RbaKUmC8A:;q5<!L\h'
+              required:
+                - email
+                - token
+                - password
+      security: []
+  /api/children:
+    get:
+      summary: 'Get all children for the authenticated parent.'
+      operationId: getAllChildrenForTheAuthenticatedParent
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Create a child for a user.'
+      operationId: createAChildForAUser
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'The name of the child.'
+                  example: 'John Doe'
+                birth_date:
+                  type: date
+                  description: 'The birth date of the child. Format: YYYY-MM-DD.'
+                  example: '2020-01-01'
+                gender:
+                  type: string
+                  description: 'The gender of the child.'
+                  example: Male
+              required:
+                - name
+                - birth_date
+                - gender
+      security: []
+  '/api/children/{id}':
+    get:
+      summary: 'Get a specific child.'
+      operationId: getASpecificChild
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: 'The ID of the child.'
+                  example: 1
+              required:
+                - id
+      security: []
+    put:
+      summary: "Update a child's information."
+      operationId: updateAChildsInformation
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'optional The updated name of the child.'
+                  example: 'Jane Doe'
+                birth_date:
+                  type: date
+                  description: 'optional The updated birth date of the child. Format: YYYY-MM-DD.'
+                  example: '2021-01-01'
+                gender:
+                  type: string
+                  description: 'optional The updated gender of the child.'
+                  example: Female
+                id:
+                  type: integer
+                  description: 'The ID of the child.'
+                  example: 1
+              required:
+                - id
+      security: []
+    delete:
+      summary: 'Delete a child.'
+      operationId: deleteAChild
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: 'The ID of the child.'
+                  example: 1
+              required:
+                - id
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the child.'
+        example: laboriosam
+        required: true
+        schema:
+          type: string
+  /api/parents:
+    get:
+      summary: 'Get all users.'
+      operationId: getAllUsers
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  '/api/parents/{id}':
+    get:
+      summary: 'Get a specific parent by ID.'
+      operationId: getASpecificParentByID
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: 'The ID of the parent.'
+                  example: 1
+              required:
+                - id
+      security: []
+    put:
+      summary: "Update a user's profile (name, email, etc.)."
+      operationId: updateAUsersProfilenameEmailEtc
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: "optional The parent's name."
+                  example: 'John Doe'
+                email:
+                  type: string
+                  description: "optional The parent's email."
+                  example: john@example.com
+                password:
+                  type: string
+                  description: "optional The parent's password. Must be at least 8 characters. Confirm password with 'password_confirmation'."
+                  example: 'e$mdlA"-xn^@UbLh<d'
+                id:
+                  type: integer
+                  description: 'The ID of the user.'
+                  example: 1
+              required:
+                - id
+      security: []
+    delete:
+      summary: 'Delete a user.'
+      operationId: deleteAUser
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: 'The ID of the user.'
+                  example: 1
+              required:
+                - id
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the parent.'
+        example: numquam
+        required: true
+        schema:
+          type: string
+  /api/month-ranges:
+    get:
+      summary: 'Get all month ranges.'
+      operationId: getAllMonthRanges
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Create a new month range.'
+      operationId: createANewMonthRange
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                month_range:
+                  type: string
+                  description: ''
+                  example: voluptatem
+                month_start:
+                  type: string
+                  description: 'The start month of the range.'
+                  example: January
+                month_end:
+                  type: string
+                  description: 'The end month of the range.'
+                  example: December
+              required:
+                - month_range
+                - month_start
+                - month_end
+      security: []
+  '/api/month-ranges/{id}':
+    get:
+      summary: 'Get a specific month range.'
+      operationId: getASpecificMonthRange
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: 'The ID of the month range.'
+                  example: 1
+              required:
+                - id
+      security: []
+    put:
+      summary: 'Update a month range.'
+      operationId: updateAMonthRange
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                month_range:
+                  type: string
+                  description: ''
+                  example: est
+                id:
+                  type: integer
+                  description: 'The ID of the month range.'
+                  example: 1
+                month_start:
+                  type: string
+                  description: 'The updated start month of the range.'
+                  example: January
+                month_end:
+                  type: string
+                  description: 'The updated end month of the range.'
+                  example: December
+              required:
+                - month_range
+                - id
+                - month_start
+                - month_end
+      security: []
+    delete:
+      summary: 'Delete a month range.'
+      operationId: deleteAMonthRange
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: 'The ID of the month range.'
+                  example: 1
+              required:
+                - id
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the month range.'
+        example: fuga
+        required: true
+        schema:
+          type: string
+  /api/milestones:
+    get:
+      summary: 'Get a list of milestones.'
+      operationId: getAListOfMilestones
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a new milestone.'
+      operationId: storeANewMilestone
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'The name of the milestone.'
+                  example: 'Milestone 1'
+              required:
+                - name
+      security: []
+  '/api/milestones/{id}':
+    get:
+      summary: 'Show a specific milestone.'
+      operationId: showASpecificMilestone
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: 'The ID of the milestone.'
+                  example: 1
+              required:
+                - id
+      security: []
+    put:
+      summary: 'Update a milestone.'
+      operationId: updateAMilestone
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'The updated name of the milestone.'
+                  example: 'Updated Milestone 1'
+                id:
+                  type: integer
+                  description: 'The ID of the milestone.'
+                  example: 1
+              required:
+                - name
+                - id
+      security: []
+    delete:
+      summary: 'Delete a milestone.'
+      operationId: deleteAMilestone
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: 'The ID of the milestone.'
+                  example: 1
+              required:
+                - id
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the milestone.'
+        example: soluta
+        required: true
+        schema:
+          type: string
+  '/api/children/{child_id}/daily-routines':
+    get:
+      summary: 'Get all daily routines for a specific child.'
+      operationId: getAllDailyRoutinesForASpecificChild
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                child_id:
+                  type: integer
+                  description: 'The ID of the child.'
+                  example: 1
+              required:
+                - child_id
+      security: []
+    post:
+      summary: 'Store a new daily routine for a specific child.'
+      operationId: storeANewDailyRoutineForASpecificChild
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                routine_title:
+                  type: string
+                  description: 'The title of the routine.'
+                  example: 'Morning Exercise'
+                time_of_day:
+                  type: string
+                  description: 'The time of day for the routine.'
+                  example: Morning
+                date:
+                  type: date
+                  description: 'The date of the routine. Format: YYYY-MM-DD.'
+                  example: '2024-10-01'
+                child_id:
+                  type: integer
+                  description: 'The ID of the child.'
+                  example: 1
+              required:
+                - routine_title
+                - time_of_day
+                - date
+                - child_id
+      security: []
+    parameters:
+      -
+        in: path
+        name: child_id
+        description: 'The ID of the child.'
+        example: et
+        required: true
+        schema:
+          type: string
+  '/api/children/{child_id}/daily-routines/{routine_id}':
+    get:
+      summary: 'Show a specific routine for a child.'
+      operationId: showASpecificRoutineForAChild
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                child_id:
+                  type: integer
+                  description: 'The ID of the child.'
+                  example: 1
+                routine_id:
+                  type: integer
+                  description: 'The ID of the routine.'
+                  example: 1
+              required:
+                - child_id
+                - routine_id
+      security: []
+    put:
+      summary: 'Update a daily routine for a specific child.'
+      operationId: updateADailyRoutineForASpecificChild
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                routine_title:
+                  type: string
+                  description: 'The updated title of the routine.'
+                  example: 'Updated Morning Exercise'
+                time_of_day:
+                  type: string
+                  description: 'The updated time of day for the routine.'
+                  example: Mid-Day
+                date:
+                  type: date
+                  description: 'The updated date of the routine. Format: YYYY-MM-DD.'
+                  example: '2024-10-01'
+                child_id:
+                  type: integer
+                  description: 'The ID of the child.'
+                  example: 1
+                routine_id:
+                  type: integer
+                  description: 'The ID of the routine.'
+                  example: 1
+              required:
+                - routine_title
+                - time_of_day
+                - date
+                - child_id
+                - routine_id
+      security: []
+    delete:
+      summary: 'Delete a daily routine for a specific child.'
+      operationId: deleteADailyRoutineForASpecificChild
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                child_id:
+                  type: integer
+                  description: 'The ID of the child.'
+                  example: 1
+                routine_id:
+                  type: integer
+                  description: 'The ID of the routine.'
+                  example: 1
+              required:
+                - child_id
+                - routine_id
+      security: []
+    parameters:
+      -
+        in: path
+        name: child_id
+        description: 'The ID of the child.'
+        example: ad
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: routine_id
+        description: 'The ID of the routine.'
+        example: qui
+        required: true
+        schema:
+          type: string
+tags:
+  -
+    name: Endpoints
+    description: ''
