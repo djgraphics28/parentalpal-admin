@@ -24,7 +24,7 @@ class AuthController extends Controller
 
     /**
      * Register a new user.
-     *
+     * @bodyParam password_confirmation string required The Password Confirmation of the user. Example: qweqweqew
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */

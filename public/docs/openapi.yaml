@@ -26,19 +26,24 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ofwrvuldis
+                  example: om
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: mcole@example.com
+                  example: marina.donnelly@example.com
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: ')2"F-e6#'
+                  example: 'ZzvckL-D8,V'
+                password_confirmation:
+                  type: string
+                  description: 'The Password Confirmation of the user.'
+                  example: qweqweqew
               required:
                 - name
                 - email
                 - password
+                - password_confirmation
       security: []
   /api/login:
     post:
@@ -59,11 +64,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: bennett26@example.com
+                  example: fskiles@example.org
                 password:
                   type: string
                   description: ''
-                  example: ':$phd3`Q'
+                  example: 'B"MwdB[('
               required:
                 - email
                 - password
@@ -87,7 +92,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: orion.quigley@example.net
+                  example: moore.candice@example.org
               required:
                 - email
       security: []
@@ -120,15 +125,15 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: kristin67@example.org
+                  example: connie.hartmann@example.com
                 token:
                   type: string
                   description: ''
-                  example: aliquam
+                  example: temporibus
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: "/~*dvL=z`)3Sw=('X|S"
+                  example: '&&;Or)pdt*Y81*bV$~'
               required:
                 - email
                 - token
@@ -284,7 +289,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the child.'
-        example: natus
+        example: accusamus
         required: true
         schema:
           type: string
@@ -371,7 +376,7 @@ paths:
                 password:
                   type: string
                   description: "optional The parent's password. Must be at least 8 characters. Confirm password with 'password_confirmation'."
-                  example: /xBmDM!p(
+                  example: 'r*p|_fZHS<.wZM\8w2'
                 id:
                   type: integer
                   description: 'The ID of the user.'
@@ -406,7 +411,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the parent.'
-        example: iste
+        example: corporis
         required: true
         schema:
           type: string
@@ -450,7 +455,7 @@ paths:
                 month_range:
                   type: string
                   description: ''
-                  example: dolor
+                  example: quidem
                 month_start:
                   type: string
                   description: 'The start month of the range.'
@@ -517,7 +522,7 @@ paths:
                 month_range:
                   type: string
                   description: ''
-                  example: at
+                  example: nihil
                 id:
                   type: integer
                   description: 'The ID of the month range.'
@@ -563,7 +568,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the month range.'
-        example: dolores
+        example: illum
         required: true
         schema:
           type: string
@@ -700,7 +705,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the milestone.'
-        example: recusandae
+        example: inventore
         required: true
         schema:
           type: string
@@ -781,7 +786,7 @@ paths:
         in: path
         name: child_id
         description: 'The ID of the child.'
-        example: ad
+        example: et
         required: true
         schema:
           type: string
@@ -899,7 +904,7 @@ paths:
         in: path
         name: child_id
         description: 'The ID of the child.'
-        example: dolores
+        example: quia
         required: true
         schema:
           type: string
@@ -907,7 +912,7 @@ paths:
         in: path
         name: routine_id
         description: 'The ID of the routine.'
-        example: eius
+        example: at
         required: true
         schema:
           type: string
