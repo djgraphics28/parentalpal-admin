@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\MonthRangeResource\Pages;
-use App\Filament\Resources\MonthRangeResource\RelationManagers;
-use App\Models\MonthRange;
+use App\Filament\Resources\ChildResource\Pages;
+use App\Filament\Resources\ChildResource\RelationManagers;
+use App\Models\Child;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,19 +13,29 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class MonthRangeResource extends Resource
+class ChildResource extends Resource
 {
-    protected static ?string $model = MonthRange::class;
+    protected static ?string $model = Child::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
+
+    //order
+    protected static ?int $navigationSort = 4;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('month_range')
+                Forms\Components\Select::make('parent_id')
+                    ->relationship('parent', 'name')
+                    ->required(),
+                Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\DatePicker::make('birth_date')
+                    ->required(),
+                Forms\Components\TextInput::make('gender')
+                    ->required(),
             ]);
     }
 
@@ -33,8 +43,15 @@ class MonthRangeResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('month_range')
+                Tables\Columns\TextColumn::make('parent.name')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('name')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('birth_date')
+                    ->date()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('gender'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -60,16 +77,16 @@ class MonthRangeResource extends Resource
     public static function getRelations(): array
     {
         return [
-            RelationManagers\MilestonesRelationManager::class,
+            //
         ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListMonthRanges::route('/'),
-            'create' => Pages\CreateMonthRange::route('/create'),
-            'edit' => Pages\EditMonthRange::route('/{record}/edit'),
+            'index' => Pages\ListChildren::route('/'),
+            'create' => Pages\CreateChild::route('/create'),
+            'edit' => Pages\EditChild::route('/{record}/edit'),
         ];
     }
 }

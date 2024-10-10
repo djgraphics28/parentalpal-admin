@@ -26,6 +26,9 @@ class MilestoneResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\RichEditor::make('description')
+                    ->columnSpanFull()
+                    ->maxLength(255)
             ]);
     }
 
@@ -35,6 +38,9 @@ class MilestoneResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
+                // Tables\Columns\TextColumn::make('monthRanges') // Access the belongsToMany relationship
+                //     ->formatStateUsing(fn($record) => $record->monthRanges->pluck('name')->implode(', ')) // Ensure you're accessing the collection properly
+                //     ->searchable(), // Make it searchable if needed
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
