@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Models\ParentPal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\ProfileResource;
 use Livewire\Features\SupportConsoleCommands\Commands\Upgrade\ChangeTestAssertionMethods;
 
 class ProfileController extends Controller
@@ -17,7 +18,7 @@ class ProfileController extends Controller
         // If you want to ensure that you only return certain fields, you can do so here:
         return response()->json([
             'status' => 'success',
-            'data' => $user // Returns all user data
+            'data' => New ProfileResource($user) // Returns all user data
             // Or return only specific fields: 'data' => $user->only(['name', 'email', 'phone']),
         ]);
     }
@@ -62,5 +63,36 @@ class ProfileController extends Controller
             'message' => 'Password updated successfully'
         ]);
     }
+
+    public function uploadProfilePicture(Request $request, $id)
+    {
+        // Get the authenticated user or find by ID
+        $user = ParentPal::find($id);
+
+        // Validate the incoming request
+        $request->validate([
+            'profile_picture' => 'required|image|mimes:jpg,jpeg,png|max:2048', // Adjust rules as necessary
+        ]);
+
+        // Handle file upload using Media Library
+        if ($request->hasFile('profile_picture')) {
+            // Clear the existing media in the avatars collection if necessary
+            if ($user->hasMedia('avatars')) {
+                $user->clearMediaCollection('avatars');
+            }
+
+            // Add the new profile picture to the avatars collection
+            $user->addMedia($request->file('profile_picture'))->toMediaCollection('avatars');
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Profile picture updated successfully',
+            'data' => [
+                'profilePicture' => $user->getFirstMediaUrl('avatars'), // Get the URL of the uploaded image
+            ]
+        ]);
+    }
+
 
 }
