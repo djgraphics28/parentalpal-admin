@@ -15,7 +15,7 @@ class Child extends Model implements HasMedia
 
 
     protected $fillable = [
-        'user_id',
+        'parent_id',
         'name',
         'birth_date',
         'gender',
