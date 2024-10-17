@@ -22,6 +22,7 @@ class ChildrenResource extends JsonResource
         $age = $currentDate->diff($birthDate);
 
         return [
+            'id' => $this->id,
             'name' => $this->name,
             'gender' => $this->gender,
             'age' => $age->y . ' years and ' . $age->m . ' months', // Format the age
