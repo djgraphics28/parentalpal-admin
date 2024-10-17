@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
+use App\Models\ParentPal;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ProfileController extends Controller
 {
-    public function getProfile(Request $request)
+    public function getProfile(Request $request, $id)
     {
         // Get the authenticated user using the ParentPal model
-        $user = $request->user('parent'); // Specify the guard if using multiple guards
+        $user = ParentPal::find($id);
 
         // If you want to ensure that you only return certain fields, you can do so here:
         return response()->json([

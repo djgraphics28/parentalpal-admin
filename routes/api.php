@@ -24,7 +24,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('reset-password', [AuthController::class, 'resetPassword']);
 
-    Route::get('/profile', [ProfileController::class, 'getProfile'])->name('api.profile');
+    Route::get('/{userId}/profile', [ProfileController::class, 'getProfile'])->name('api.profile');
 
     Route::get('/{parentId}/children', [ChildController::class, 'index']);         // Get all children for the authenticated user
     Route::post('/children', [ChildController::class, 'store']);        // Create a new child
