@@ -25,11 +25,17 @@ class ProfileController extends Controller
 
     public function updateProfile(Request $request, $id)
     {
+        // Validate the incoming request
+        $request->validate([
+            'name' => 'required|alpha', // Only allows alphabetic characters for the name
+            'email' => 'required|email', // Ensures the email is in a valid format
+        ]);
+
         // Get the authenticated user using the ParentPal model
         $user = ParentPal::find($id);
 
         // Update the user's profile with the request data
-        $user->update($request->all());
+        $user->update($request->only(['name', 'email']));
 
         return response()->json([
             'status' => 'success',
@@ -37,6 +43,7 @@ class ProfileController extends Controller
             'data' => $user
         ]);
     }
+
 
     //updatePassword
     public function updatePassword(Request $request, $id)
