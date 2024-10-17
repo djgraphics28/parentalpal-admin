@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Filament\Resources\ChildResource;
 use App\Http\Controllers\Controller;
 use App\Models\Child;
 use Illuminate\Http\Request;
@@ -55,7 +56,7 @@ class ChildController extends Controller
     {
         $children = Child::where('parent_id', $parentId)->get()->toArray();
 
-        return $this->success($children, 'Children retrieved successfully', 200);
+        return $this->success(ChildResource::collection($children), 'Children retrieved successfully', 200);
     }
 
     /**
