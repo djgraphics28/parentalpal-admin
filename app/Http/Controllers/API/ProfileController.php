@@ -48,6 +48,11 @@ class ProfileController extends Controller
     //updatePassword
     public function updatePassword(Request $request, $id)
     {
+        $request->validate([
+            'currentPassword' => 'required', // Only allows alphabetic characters for the name
+            'newPassword' => 'required|min:6', // Ensures the email is in a valid format
+        ]);
+
         // Get the authenticated user using the ParentPal model
         $user = ParentPal::find($id);
 
