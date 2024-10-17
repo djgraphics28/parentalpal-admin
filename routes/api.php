@@ -27,6 +27,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/{userId}/profile', [ProfileController::class, 'getProfile'])->name('api.profile');
     Route::PUT('/{userId}/profile', [ProfileController::class, 'updateProfile'])->name('api.update.profile');
     Route::PUT('/{userId}/update-password', [ProfileController::class, 'updatePassword'])->name('api.update.password');
+    Route::PUT('/{userId}/upload-profile-picture', [ProfileController::class, 'uploadProfilePicture'])->name('api.update.profile_picture');
 
     Route::get('/{parentId}/children', [ChildController::class, 'index']);         // Get all children for the authenticated user
     Route::post('/{parentId}/children', [ChildController::class, 'store']);        // Create a new child
