@@ -19,7 +19,7 @@ class ProfileResource extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'phone' => $this->phone,
-            'profile_picture' => $this->hasMedia('avatars') ? $this->getFirstMediaUrl('avatars') : asset('assets/profile.jpg'),
+            'profile_picture' => $this->hasMedia('avatars') ? $this->getFirstMediaUrl('avatars') : null,
             // Add other user fields as necessary
         ];
     }
