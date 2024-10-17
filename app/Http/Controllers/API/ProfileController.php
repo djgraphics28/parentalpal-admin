@@ -43,8 +43,9 @@ class ProfileController extends Controller
         // Get the authenticated user using the ParentPal model
         $user = ParentPal::find($id);
 
+
         // Check if the current password matches
-        if (!password_verify($request->current_password, $user->password)) {
+        if (!password_verify($request->currentPassword, $user->password)) {
             return response()->json([
                 'status' => 'error',
                 'message' => 'Current password is incorrect'
@@ -53,7 +54,7 @@ class ProfileController extends Controller
 
         // Update the user's password
         $user->update([
-            'password' => bcrypt($request->new_password)
+            'password' => bcrypt($request->newPassword)
         ]);
 
         return response()->json([
