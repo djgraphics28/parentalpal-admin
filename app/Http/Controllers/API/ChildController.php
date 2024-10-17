@@ -29,7 +29,7 @@ class ChildController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         $request->validate([
             'name' => 'required|string|max:255',
@@ -38,7 +38,7 @@ class ChildController extends Controller
         ]);
 
         $child = Child::create([
-            'user_id' => Auth::id(),  // Use the authenticated parent's ID
+            'parent_id' => $id,  // Use the authenticated parent's ID
             'name' => $request->name,
             'birth_date' => $request->birth_date,
             'gender' => $request->gender,
