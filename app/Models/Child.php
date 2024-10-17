@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Child extends Model implements HasMedia
 {
@@ -28,5 +29,15 @@ class Child extends Model implements HasMedia
    public function parent(): BelongsTo
    {
        return $this->belongsTo(ParentPal::class, 'parent_id', 'id');
+   }
+
+   /**
+    * Get all of the dailyRoutines for the Child
+    *
+    * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    */
+   public function dailyRoutines(): HasMany
+   {
+       return $this->hasMany(DailyRoutine::class, 'child_id', 'id');
    }
 }

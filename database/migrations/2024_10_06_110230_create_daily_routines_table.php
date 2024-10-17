@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('child_id')->constrained('children')->onDelete('cascade');  // Reference the Child model
             $table->string('routine_title');
             $table->enum('time_of_day', ['Morning', 'Mid-morning', 'Mid-day', 'Afternoon', 'Evening']);
-            $table->date('date');
+            $table->dateTime('date');
             $table->timestamps();
         });
     }

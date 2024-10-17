@@ -2,10 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ChildrenResource\RelationManagers\DailyRoutinesRelationManager;
-use App\Filament\Resources\ChildResource\Pages;
-use App\Filament\Resources\ChildResource\RelationManagers;
-use App\Models\Child;
+use App\Filament\Resources\DailyRoutineResource\Pages;
+use App\Filament\Resources\DailyRoutineResource\RelationManagers;
+use App\Models\DailyRoutine;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -14,28 +13,25 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ChildResource extends Resource
+class DailyRoutineResource extends Resource
 {
-    protected static ?string $model = Child::class;
+    protected static ?string $model = DailyRoutine::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-users';
-
-    //order
-    protected static ?int $navigationSort = 4;
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('parent_id')
-                    ->relationship('parent', 'name')
-                    ->required(),
-                Forms\Components\TextInput::make('name')
+                Forms\Components\TextInput::make('child_id')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('routine_title')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\DatePicker::make('birth_date')
+                Forms\Components\TextInput::make('time_of_day')
                     ->required(),
-                Forms\Components\TextInput::make('gender')
+                Forms\Components\DateTimePicker::make('date')
                     ->required(),
             ]);
     }
@@ -44,15 +40,15 @@ class ChildResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('parent.name')
+                Tables\Columns\TextColumn::make('child_id')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('name')
+                Tables\Columns\TextColumn::make('routine_title')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('birth_date')
-                    ->date()
+                Tables\Columns\TextColumn::make('time_of_day'),
+                Tables\Columns\TextColumn::make('date')
+                    ->dateTime()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('gender'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -78,16 +74,16 @@ class ChildResource extends Resource
     public static function getRelations(): array
     {
         return [
-            DailyRoutinesRelationManager::class,
+            //
         ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListChildren::route('/'),
-            'create' => Pages\CreateChild::route('/create'),
-            'edit' => Pages\EditChild::route('/{record}/edit'),
+            'index' => Pages\ListDailyRoutines::route('/'),
+            'create' => Pages\CreateDailyRoutine::route('/create'),
+            'edit' => Pages\EditDailyRoutine::route('/{record}/edit'),
         ];
     }
 }

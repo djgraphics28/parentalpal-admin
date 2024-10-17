@@ -51,11 +51,11 @@ class ChildController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index()
+    public function index($parentId)
     {
-        $children = Auth::user()->children;  // Assuming User has a children relationship
+        $children = Child::where('parent_id', $parentId)->get()->toArray();
 
-        return $this->success($children, 'Children retrieved successfully');
+        return $this->success($children, 'Children retrieved successfully', 200);
     }
 
     /**

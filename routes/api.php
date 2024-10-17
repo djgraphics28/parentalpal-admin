@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
@@ -23,13 +24,15 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('reset-password', [AuthController::class, 'resetPassword']);
 
-    // Route::get('children', [ChildController::class, 'index']);         // Get all children for the authenticated user
-    // Route::post('children', [ChildController::class, 'store']);        // Create a new child
-    // Route::get('children/{id}', [ChildController::class, 'show']);     // Get a specific child
-    // Route::put('children/{id}', [ChildController::class, 'update']);   // Update a child's information
-    // Route::delete('children/{id}', [ChildController::class, 'destroy']);// Delete a child
+    Route::get('/profile', [ProfileController::class, 'getProfile'])->name('api.profile');
 
-    Route::apiResource('children', ChildController::class);
+    Route::get('/{parentId}/children', [ChildController::class, 'index']);         // Get all children for the authenticated user
+    Route::post('/children', [ChildController::class, 'store']);        // Create a new child
+    Route::get('/children/{id}', [ChildController::class, 'show']);     // Get a specific child
+    Route::put('/children/{id}', [ChildController::class, 'update']);   // Update a child's information
+    Route::delete('/children/{id}', [ChildController::class, 'destroy']);// Delete a child
+
+    // Route::apiResource('children', ChildController::class);
     Route::apiResource('parents', ParentController::class);
     Route::apiResource('month-ranges', MonthRangeController::class);
     Route::apiResource('milestones', MilestoneController::class);

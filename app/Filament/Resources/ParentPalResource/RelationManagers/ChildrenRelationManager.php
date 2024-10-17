@@ -6,7 +6,9 @@ use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use App\Models\DailyRoutine;
 use Illuminate\Support\Carbon;
+use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Resources\RelationManagers\RelationManager;
@@ -26,11 +28,11 @@ class ChildrenRelationManager extends RelationManager
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                //birthdate
+                // Birthdate
                 Forms\Components\DatePicker::make('birth_date')
                     ->native(false)
                     ->required(),
-                //gender
+                // Gender
                 Forms\Components\Select::make('gender')
                     ->required()
                     ->options([
@@ -65,12 +67,9 @@ class ChildrenRelationManager extends RelationManager
                         // Format the total months using number_format
                         return number_format($totalMonths) . ' month' . ($totalMonths === 1 ? '' : 's');
                     }),
-
-
-
             ])
             ->filters([
-                //
+                // Add any filters if needed
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make(),
@@ -78,11 +77,64 @@ class ChildrenRelationManager extends RelationManager
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
+                Tables\Actions\Action::make('View Daily Routines')
+                    ->url(fn($record) => route('children.daily-routines', ['childId' => $record->id]))
+                    ->openUrlInNewTab(),
+                Tables\Actions\Action::make('Enter DailyRoutine')
+                    ->modal()
+                    ->modalWidth('lg') // Set modal width
+                    ->form($this->dailyRoutineForm()) // Bind the form for daily routine
+                    ->action(function ($record, array $data) {
+                        // Create the DailyRoutine entry
+                        DailyRoutine::create([
+                            'child_id' => $record->id,
+                            'routine_title' => $data['routine_title'],
+                            'time_of_day' => $data['time_of_day'],
+                            'date' => $data['date'],
+                        ]);
+
+                        // Show a success notification
+                        Notification::make()
+                            ->title('Success')
+                            ->body('Daily routine added successfully!')
+                            ->success()
+                            ->send();
+                    }),
+                Tables\Actions\Action::make('Create Milestone') // New Action
+                    ->action(function ($record) {
+                        // Define the action logic here, e.g., navigate to Milestone creation form
+                    }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
+    }
+
+    protected function dailyRoutineForm(): array
+    {
+        return [
+            Forms\Components\TextInput::make('routine_title')
+                ->required()
+                ->label('Routine Title')
+                ->maxLength(255),
+
+            Forms\Components\Select::make('time_of_day')
+                ->required()
+                ->label('Time of Day')
+                ->options([
+                    'Morning' => 'Morning',
+                    'Mid-morning' => 'Mid-morning',
+                    'Mid-day' => 'Mid-day',
+                    'Afternoon' => 'Afternoon',
+                    'Evening' => 'Evening',
+                ]),
+
+            Forms\Components\DatePicker::make('date')
+                ->required()
+                ->label('Date')
+                ->native(false),
+        ];
     }
 }
