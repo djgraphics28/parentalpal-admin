@@ -27,17 +27,26 @@ class DailyRoutineController extends Controller
      * @param int $child_id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index($child_id)
+    public function index(Request $request, $child_id)
     {
-        $child = Child::find($child_id);
+        // Access query parameters
+        $searchTerm = $request->query('searchTerm'); // Get the searchTerm parameter
+        $category = $request->query('category'); // Get the category parameter
 
-        if (!$child) {
-            return $this->error(null, 'Child not found', 404);
+        // Example: Use the parameters to filter results
+        $query = DailyRoutine::query();
+
+        if ($searchTerm) {
+            $query->where('name', 'like', "%$searchTerm%"); // Assuming you're searching by name
         }
 
-        $routines = $child->dailyRoutines;
+        if ($category) {
+            $query->where('time_of_day', $category); // Assuming you have a category field
+        }
 
-        return $this->success(ChildrenActivityResource::collection($routines), 'Daily routines retrieved successfully');
+        $activities = $query->where('child_id', $child_id)->get();
+
+        return $this->success(ChildrenActivityResource::collection($activities), 'Children retrieved successfully');
     }
 
     /**
