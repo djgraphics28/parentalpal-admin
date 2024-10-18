@@ -82,7 +82,7 @@ class DailyRoutineController extends Controller
             'date' => $request->activityDateTime,
         ]);
 
-        return $this->success($routine, 'Daily routine added successfully', 201);
+        return $this->success(New ChildrenActivityResource($routine), 'Daily routine added successfully', 201);
     }
 
     /**
