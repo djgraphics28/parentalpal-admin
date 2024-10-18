@@ -40,11 +40,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('month-ranges', MonthRangeController::class);
     Route::apiResource('milestones', MilestoneController::class);
 
-    Route::get('children/{child_id}/daily-routines', [DailyRoutineController::class, 'index']);          // Get all daily routines for a child
-    Route::post('children/{child_id}/daily-routines', [DailyRoutineController::class, 'store']);         // Create a new daily routine
-    Route::get('children/{child_id}/daily-routines/{routine_id}', [DailyRoutineController::class, 'show']); // Get a specific routine
-    Route::put('children/{child_id}/daily-routines/{routine_id}', [DailyRoutineController::class, 'update']); // Update a routine
-    Route::delete('children/{child_id}/daily-routines/{routine_id}', [DailyRoutineController::class, 'destroy']); // Delete a routine
+    Route::get('children/{child_id}/activities', [DailyRoutineController::class, 'index']);          // Get all daily routines for a child
+    Route::post('children/{child_id}/activities', [DailyRoutineController::class, 'store']);         // Create a new daily routine
+    Route::get('children/{child_id}/activities/{routine_id}', [DailyRoutineController::class, 'show']); // Get a specific routine
+    Route::put('children/{child_id}/activities/{routine_id}', [DailyRoutineController::class, 'update']); // Update a routine
+    Route::delete('children/{child_id}/activities/{routine_id}', [DailyRoutineController::class, 'destroy']); // Delete a routine
 
     // Route::get('month-ranges', [MonthRangeController::class, 'index']);          // Get all month ranges
     // Route::post('month-ranges', [MonthRangeController::class, 'store']);         // Create a month range
