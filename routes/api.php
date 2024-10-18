@@ -9,6 +9,7 @@ use App\Http\Controllers\API\ProfileController;
 use App\Http\Controllers\API\MilestoneController;
 use App\Http\Controllers\API\MonthRangeController;
 use App\Http\Controllers\API\DailyRoutineController;
+use App\Http\Controllers\API\MilestonesByAgeController;
 use App\Http\Controllers\API\VideoReferencesController;
 
 // Route::get('/user', function (Request $request) {
@@ -48,6 +49,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('children/{child_id}/activities/{routine_id}', [DailyRoutineController::class, 'destroy']); // Delete a routine
 
     Route::get('/get-video-references', [VideoReferencesController::class, 'index']);
+    Route::get('/get-milestone-by-age', [MilestonesByAgeController::class, 'index']);
     // Route::get('month-ranges', [MonthRangeController::class, 'index']);          // Get all month ranges
     // Route::post('month-ranges', [MonthRangeController::class, 'store']);         // Create a month range
     // Route::get('month-ranges/{id}', [MonthRangeController::class, 'show']);      // Get a specific month range
