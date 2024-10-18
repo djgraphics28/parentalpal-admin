@@ -44,7 +44,7 @@ class DailyRoutineController extends Controller
             $query->where('time_of_day', $category); // Assuming you have a category field
         }
 
-        $activities = $query->where('child_id', $child_id)->get();
+        $activities = $query->where('child_id', $child_id)->latest()->get();
 
         return $this->success(ChildrenActivityResource::collection($activities), 'Children retrieved successfully');
     }
