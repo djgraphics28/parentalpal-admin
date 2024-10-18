@@ -54,9 +54,9 @@ class DailyRoutineController extends Controller
     public function store(Request $request, $child_id)
     {
         $request->validate([
-            'routine_title' => 'required|string|max:255',
-            'time_of_day' => 'required|in:Morning,Mid-Morning,Mid-Day,Afternoon,Evening',
-            'date' => 'required|date',
+            'activityTitle' => 'required|string|max:255',
+            'activityCategory' => 'required|in:Morning,Mid-Morning,Mid-Day,Afternoon,Evening',
+            'activityDateTime' => 'required',
         ]);
 
         $child = Child::find($child_id);
@@ -67,9 +67,9 @@ class DailyRoutineController extends Controller
 
         $routine = DailyRoutine::create([
             'child_id' => $child_id,
-            'routine_title' => $request->routine_title,
-            'time_of_day' => $request->time_of_day,
-            'date' => $request->date,
+            'routine_title' => $request->activityTitle,
+            'time_of_day' => $request->activityCategory,
+            'date' => $request->activityDateTime,
         ]);
 
         return $this->success($routine, 'Daily routine added successfully', 201);
