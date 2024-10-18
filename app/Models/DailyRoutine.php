@@ -16,6 +16,10 @@ class DailyRoutine extends Model
         'date'
     ];
 
+    protected $casts = [
+        'date' => 'datetime',
+    ];
+
     // Define relationship to Child
     public function child()
     {
