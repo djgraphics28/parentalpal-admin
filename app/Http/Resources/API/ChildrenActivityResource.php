@@ -16,9 +16,10 @@ class ChildrenActivityResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'activityTitle' => $this->routine_title,
-            'activityDateTime' => $this->date,
-            'activityCategory' => $this->time_of_day
+            'title' => $this->routine_title,
+            'date' => $this->date ? $this->date->format('Y-m-d') : null, // Extract only the date
+            'time' => $this->date ? $this->date->format('H:i:s') : null, // Extract only the time
+            'category' => $this->time_of_day
         ];
     }
 }
