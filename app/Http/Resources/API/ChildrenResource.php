@@ -26,6 +26,7 @@ class ChildrenResource extends JsonResource
             'name' => $this->name,
             'gender' => $this->gender,
             'age' => $age->y . ' years and ' . $age->m . ' months', // Format the age
+            'photoUrl' => $this->hasMedia('avatars') ? $this->getFirstMediaUrl('avatars') : null,
         ];
     }
 }
