@@ -56,7 +56,7 @@ class DailyRoutineController extends Controller
     {
         $request->validate([
             'activityTitle' => 'required|string|max:255',
-            'activityCategory' => 'required|in:Morning,Mid-Morning,Mid-Day,Afternoon,Evening',
+            'activityCategory' => 'required|in:Morning,Mid-morning,Mid-day,Afternoon,Evening',
             'activityDateTime' => 'required',
         ]);
 
