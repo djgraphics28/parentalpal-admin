@@ -7,6 +7,7 @@ use App\Models\DailyRoutine;
 use Illuminate\Http\Request;
 use App\Traits\HttpResponses;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\API\ChildrenActivityResource;
 
 class DailyRoutineController extends Controller
 {
@@ -36,7 +37,7 @@ class DailyRoutineController extends Controller
 
         $routines = $child->dailyRoutines;
 
-        return $this->success($routines, 'Daily routines retrieved successfully');
+        return $this->success(ChildrenActivityResource::collection($routines), 'Daily routines retrieved successfully');
     }
 
     /**
